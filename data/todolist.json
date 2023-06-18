@@ -1,0 +1,20 @@
+{
+    "todos":[
+        {
+            "id":1,
+            "text":"Workout"
+        },
+        {
+            "id":2,
+            "text":"Reading book"
+        },
+        {
+            "id":3,
+            "text":"Need Some Coffee"
+        },
+        {
+            "id":4,
+            "text":"Let's have Refreshment"
+        }
+    ]
+}

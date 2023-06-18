@@ -1,20 +1,16 @@
 {
-    "todos":[
-        {
-            "id":1,
-            "text":"Workout"
-        },
-        {
-            "id":2,
-            "text":"Reading book"
-        },
-        {
-            "id":3,
-            "text":"Need Some Coffee"
-        },
-        {
-            "id":4,
-            "text":"Let's have Refreshment"
-        }
-    ]
+  "todos": [
+    {
+      "id": "6",
+      "text": "Going for a meeting"
+    },
+    {
+      "id": "56e31639-069d-45a1-ad56-9e9a4379956a",
+      "text": "Reading Books"
+    },
+    {
+      "id": "39efb550-58d9-425d-be3e-35e04fbeee10",
+      "text": "Go to Gym at 3 pm"
+    }
+  ]
 }

@@ -8,9 +8,10 @@ import { useRouter } from 'next/navigation';
 import { deleteTodo, editTodo } from "@/api";
 
 interface TaskProps {
-    task : ITodos
+    task : ITodos;
+    markAsDone: (id: string) => void;
 }
-const Task: React.FC<TaskProps>= ({task}) => {
+const Task: React.FC<TaskProps>= ({task,markAsDone }) => {
   const router = useRouter();
   const [openModalEdit, setopenModalEdit] = useState<boolean>(false);
   const [openModalDeleted, setopenModalDeleted] = useState<boolean>(false);
@@ -21,7 +22,8 @@ const Task: React.FC<TaskProps>= ({task}) => {
     e.preventDefault();
     await editTodo ({
       id: task.id,
-      text: todoEdit
+      text: todoEdit,
+      done:false
     })
      setopenModalEdit(false);
      router.refresh();
@@ -33,12 +35,15 @@ const Task: React.FC<TaskProps>= ({task}) => {
     }
   
   return (
-    <tr key={task.id}>
+    <tr key={task.id} className="">
     {/* <td>{task.id}</td> */}
-    <td className="w-full">{task.text}</td>
+    <td> <input type="checkbox" className="" checked={task.done} onChange={() => markAsDone(task.id)} /></td>
+    <td className={`w-full ${task.done ? "line-through text-gray-400" : ""}`}>{task.text}</td>
+ 
     <td className="flex">
-      <AiFillEdit onClick={() => setopenModalEdit(true)} cursor="pointer" color="blue" size={25}  />
-      <Modal modalOpen={openModalEdit} setModalOpen={setopenModalEdit}>
+    
+        <AiFillEdit onClick={() => setopenModalEdit(true)} cursor="pointer" color="blue" size={25} />
+        <Modal modalOpen={openModalEdit} setModalOpen={setopenModalEdit}>
           <h3 className='uppercase bolder text-lg text-center'>Edit Todo</h3>
           <form className="text-center">
             <div className='modal-action'>
@@ -52,8 +57,8 @@ const Task: React.FC<TaskProps>= ({task}) => {
             <button type='button' className='btn uppercase mt-5 text-center' onClick={handleSubmitEditTodo} >Edit Todo</button>
           </form>
         </Modal>
-      <BsTrashFill onClick={() => setopenModalDeleted(true)} cursor="pointer" color="red" size={25} className="ml-5" />
-      <Modal modalOpen={openModalDeleted} setModalOpen={setopenModalDeleted}>
+        <BsTrashFill onClick={() => setopenModalDeleted(true)} cursor="pointer" color="red" size={25} className="ml-5" />
+        <Modal modalOpen={openModalDeleted} setModalOpen={setopenModalDeleted}>
           <h3 className='uppercase bolder text-lg text-center'>Are you sure, you want to delete this Todo</h3>
           <form className="text-center">
             <div className='modal-action'>

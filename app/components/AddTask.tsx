@@ -16,7 +16,8 @@ const AddTask = () => {
     e.preventDefault();
     await addTodos ({
       id: uuidv4(),
-      text: newTodo
+      text: newTodo,
+      done: false,
     })
      setNewTodo("");
      setModalOpen(false);

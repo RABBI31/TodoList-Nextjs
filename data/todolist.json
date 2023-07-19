@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": "6",
+      "text": "Going for a meeting",
+      "done": false
+    },
+    {
+      "id": "56e31639-069d-45a1-ad56-9e9a4379956a",
+      "text": "Reading Books",
+      "done": false
+    },
+    {
+      "id": "39efb550-58d9-425d-be3e-35e04fbeee10",
+      "text": "Go to Gym at 3 pm",
+      "done": false
+    },
+    {
+      "id": "5299b044-d4e7-46e7-8fcf-0bd2555e8182",
+      "text": "I want to go most exotic place ",
+      "done": false
+    },
+    {
+      "id": "2012775d-6610-4712-b7b0-d96442f7b188",
+      "text": "eating sugar k",
+      "done": false
+    }
+  ]
+}
